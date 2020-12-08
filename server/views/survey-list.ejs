@@ -1,0 +1,131 @@
+<!--
+Author: Sage Groupe
+Date: 12-11-2020
+FileName : list.ejs
+
+Contact List views
+-->
+
+
+<%- include ./partials/header.ejs %>
+
+<%- include ./partials/main_nav.ejs %>
+<%- include partials/loginForm.ejs %>
+
+
+
+
+
+<!-- Main Content -->
+<main class="container shadow-lg">
+    <div class="row">
+        <div class=" col-md-12 ">
+            <h1 style="text-align: center;"><%= title %></h1>
+
+            <a href="/survey-list/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i>Create a Survey</a>
+
+
+            <br>
+
+        </div>
+    </div>
+    <div class="row">
+
+        <% if(typeof displayName == 'string' && displayName) {  %>
+        <% for(let count = 0; count < SurveyList.length; count++) { %>
+        <div class="col-sm-4 " style="padding: 5px;" style="height: parent;">
+            <div class="card" style="padding: 1px;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= SurveyList[count].title %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= SurveyList[count].subtitle %></h6>
+                    <a class="card-text" data-toggle="collapse" href="#collapseExample" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        Description
+                    </a>
+                    <div class="collapse" id="collapseExample">
+
+                        <p><%= SurveyList[count].description %> </p>
+
+                    </div>
+                    <br>
+                    <h5> <u>Questions</u> </h5>
+                    <ul>
+                        <li><%= SurveyList[count].enterQuestion1 %></li>
+                        <li><%= SurveyList[count].enterQuestion2 %></li>
+                        <li><%= SurveyList[count].enterQuestion3 %></li>
+                    </ul>
+                    <% if(SurveyList[count].start && SurveyList[count].end){ %>
+                        <h6 class="card-subtitle mb-2 text-muted"><%- getStartTime( SurveyList[count].start.getTime()) %></h6>
+                        <h6 class="card-subtitle mb-2 text-muted"><%- getEndTime( SurveyList[count].end.getTime()) %></h6>
+                    <% }%>
+
+                    <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                        <i class="fas fa-pencil-alt"></i> Update</a>
+                    <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i> Delete</a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        <% } %>
+
+
+
+
+    </div>
+    
+</main>
+
+<!-- Footer -->
+<footer class=" page-footer font-small " style="background-color: rgb(145, 187, 224);">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 ">© 2020 Copyright
+      
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+<%- include ./partials/footer.ejs %>
+
+
+
+<!-- <table class="table table-bordered table-striped table-hover shadow-sm" style="border:5px">
+     Header Row-->
+<!-- <tr class="d-flex">
+        <% if(typeof displayName == 'string' && displayName) { %>
+            <th class="text-center col-2">Title</th>
+            <th class="text-center col-3">Subtitle</th>
+            <th class="text-center col-5">Description</th>        
+        <% } else { %>
+            <th class="text-center col-2">Title</th>
+            <th class="text-center col-3">Subtitle</th>
+            <th class="text-center col-5">Description</th>
+           
+        <% } %>
+    </tr> -->
+
+<!-- Repeatable Template Row 
+
+    <% for(let count = 0; count < SurveyList.length; count++) { %>
+        <tr class="d-flex">
+        
+            <td class="text-center col-2"><%= SurveyList[count].title %></td>
+            <td class="text-center col-3"><%= SurveyList[count].subtitle %></td>
+            <td class="text-center col-5"><%= SurveyList[count].description %></td>
+                    
+            <td class="text-center col-1">
+                <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                <i class="fas fa-pencil-alt"></i> Update</a>
+            </td>
+            <td class="text-center col-1">
+                <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash-alt"></i> Delete</a>
+            </td>
+            
+        </tr>
+    <% } %>
+</table> -->

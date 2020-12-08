@@ -1,0 +1,79 @@
+<%- include partials/header.ejs %> 
+
+<%- include partials/main_nav.ejs %> 
+
+<%- include partials/loginForm.ejs %>
+
+
+
+  <main>
+    <div class="shadow-lg" style="background-color: rgb(145, 187, 224); ">
+      <div class="container "  >
+        <h1 class="display-10 " style="text-align: center; padding: 10px; "><%= title %></h1>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+          <form class="form" method="POST">
+            <div class="form-row align-items-center">
+  
+              <div class="w-100">
+                <label class="sr-only" for="title">Enter Survey question 1 for Short Answer Question 1:</label>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-check-square"></i></div>
+                  </div>
+                  <input type="text" class="form-control" id="enterShortQuestion1" name="enterShortQuestion1" placeholder="Enter Short Answer Survey question 1" required>
+                </div>
+              </div>
+
+             
+
+              <div class="w-100">
+                <label class="sr-only" for="Subtitle">Enter Survey question 2 for Short Answer Question 2:</label>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-check-square"></i></div>
+                  </div>
+                  <input type="text" class="form-control" id="enterShortQuestion2" name="enterShortQuestion2" placeholder="Enter Short Answer Survey question 2" required>
+                </div>
+              </div>
+
+              <div class="w-100">
+                <label class="sr-only" for="Description">Enter Survey question 3 for Short Answer Question 3:</label>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-check-square"></i></div>
+                  </div>
+                  <input type="text" class="form-control" id="enterShortQuestion3" name="enterShortQuestion3" placeholder="Enter Short Answer Survey question 3" required>
+                </div>
+              </div>
+              <div class=" w-100">
+                <hr class="solid">
+              </div>
+                        
+            <div class="form-row">
+              <div class="col-auto mx-auto d-block">
+                <button type="submit" class="btn btn-primary mb-2" id="sendButton"><i class="fas fa-paper-plane"></i> Create Survey</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="col-4">
+
+        </div>
+      </div>
+    </div>
+    
+
+  </main>
+
+<%- include partials/bottom_nav.ejs %>           
+
+<%- include partials/footer.ejs %>    

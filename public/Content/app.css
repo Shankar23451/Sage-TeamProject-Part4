@@ -1,0 +1,24 @@
+/*custom css goes here*/
+body{
+    /* background:url(https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat ; */
+}
+.bg-img{
+    background:url(https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat ;
+    background-size:100%;
+    width: 100%;
+}
+.jumbotron{
+    margin-bottom:0rem;
+}
+h1{
+
+}
+#main-h1{
+    text-align: center;
+    background-color: rgb(145, 187, 224);
+    padding:10px;
+}
+.scrollable {
+    height: 400px;
+    overflow: scroll;
+}
